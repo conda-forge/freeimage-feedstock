@@ -1,6 +1,5 @@
 {% set version = "3.17.0" %}
 
-
 package:
     name: freeimage
     version: {{ version }}
@@ -13,10 +12,20 @@ source:
     
     patches:
         - Makefile.osx.patch  # [osx]
+        - vs2010_omp.patch    # [win and py3k]
+        - vs_snprintf.patch   # [win and py>=3.5]
 
 build:
     number: 0
-    skip: true  # [win]
+    features:
+        - vc9                [win and py27]
+        - vc10               [win and py34]
+        - vc14               [win and py35]
+
+requirements:
+  build:
+    # Python here forces tracking of vc features on win.
+    - python             [win]
 
 test:
     requires:
