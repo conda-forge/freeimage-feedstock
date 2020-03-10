@@ -1,0 +1,39 @@
+c_compiler:
+- gcc
+c_compiler_version:
+- '7'
+channel_sources:
+- conda-forge,defaults
+channel_targets:
+- conda-forge main
+cxx_compiler:
+- gxx
+cxx_compiler_version:
+- '7'
+docker_image:
+- condaforge/linux-anvil-comp7
+jpeg:
+- '9'
+libpng:
+- '1.6'
+libtiff:
+- 4.1.0
+libwebp:
+- '1.0'
+openjpeg:
+- '2.3'
+pin_run_as_build:
+  jpeg:
+    max_pin: x
+  libpng:
+    max_pin: x.x
+  libtiff:
+    max_pin: x
+  libwebp:
+    max_pin: x.x
+  openjpeg:
+    max_pin: x.x
+  zlib:
+    max_pin: x.x
+zlib:
+- '1.2'

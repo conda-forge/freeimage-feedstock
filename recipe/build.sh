@@ -1,19 +1,36 @@
 #!/bin/bash
 
-export CPPFLAGS="-I${PREFIX}/include"
-export LDFLAGS="-L${PREFIX}/lib"
+dos2unix Source/**/*.cpp
 
-# freeimage does not build with conda-forge's default c++1z
-export CXXFLAGS="${CXXFLAGS} -std=c++14"
+patch -p1 < $RECIPE_DIR/patches/Use-system-libs.patch
+patch -p1 < $RECIPE_DIR/patches/Fix-compatibility-with-system-libpng.patch
+patch -p1 < $RECIPE_DIR/patches/CVE-2019-12211-13.patch
 
-cd ${SRC_DIR} || exit 1;
+# remove all included libs to make sure these don't get used during compile
+rm -r Source/Lib* Source/ZLib Source/OpenEXR
+# clear files which cannot be built due to dependencies on private headers
+# (see also unbundle patch)
+> Source/FreeImage/PluginG3.cpp
+> Source/FreeImageToolkit/JPEGTransform.cpp
 
-LC_ALL=C sed -i.bak 's:-o root -g root::' Makefile* || exit 1;
-LC_ALL=C sed -i.bak 's:-o root -g wheel::' Makefile* || exit 1;
+sh $RECIPE_DIR/posix/posix_gensrclist.sh
+if [ `uname` == Darwin ]; then
+	cat -e -t -v Makefile.srcs
+	sed -E 's/^ +//; s/ +$//; /^$/d' Makefile.srcs
+fi
+make -f Makefile.gnu dos2unix
 
-make || exit 1;
+sh $RECIPE_DIR/posix/posix_genfipsrclist.sh
+if [ `uname` == Darwin ]; then
+	cat -e -t -v Makefile.fip
+	sed -E 's/^ +//; s/ +$//; /^$/d' Makefile.fip
+fi
+make -f Makefile.fip dos2unix
 
-mkdir -p ${PREFIX}/lib || exit 1;
-mkdir -p ${PREFIX}/include || exit 1;
+echo "MAKEFILE OSX\n\n"
+cat Makefile.osx
+echo "\n\nMAKEFILE GENERAL\n\n"
+cat Makefile
 
-make install PREFIX="${PREFIX}" DESTDIR="${PREFIX}" INCDIR="${PREFIX}/include" INSTALLDIR="${PREFIX}/lib" || exit 1;
+make VERBOSE=1 -j${CPU_COUNT}
+make install PREFIX="${PREFIX}" DESTDIR="${PREFIX}" INCDIR="${PREFIX}/include" INSTALLDIR="${PREFIX}/lib"
