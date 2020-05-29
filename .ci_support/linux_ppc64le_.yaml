@@ -1,17 +1,17 @@
-MACOSX_DEPLOYMENT_TARGET:
-- '10.9'
 c_compiler:
-- clang
+- gcc
 c_compiler_version:
-- '9'
+- '8'
 channel_sources:
 - conda-forge,defaults
 channel_targets:
 - conda-forge main
 cxx_compiler:
-- clangxx
+- gxx
 cxx_compiler_version:
-- '9'
+- '8'
+docker_image:
+- condaforge/linux-anvil-ppc64le
 jpeg:
 - '9'
 libpng:
@@ -20,10 +20,6 @@ libtiff:
 - 4.1.0
 libwebp:
 - '1.1'
-macos_machine:
-- x86_64-apple-darwin13.4.0
-macos_min_version:
-- '10.9'
 openjpeg:
 - '2.3'
 pin_run_as_build:
