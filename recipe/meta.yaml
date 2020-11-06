@@ -43,7 +43,7 @@ requirements:
     - openexr
     - libpng
     - zlib
-    - libraw <0.20
+    - libraw
     - libwebp
     - ilmbase
 
