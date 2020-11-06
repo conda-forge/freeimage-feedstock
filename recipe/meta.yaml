@@ -10,7 +10,8 @@ source:
   - url: http://downloads.sourceforge.net/freeimage/FreeImage{{ version.replace('.', '') }}.zip
     sha256: f41379682f9ada94ea7b34fe86bf9ee00935a3147be41b6569c9605a53e438fd
     patches:
-      - fix_beta.patch  # [ppc64le]
+      - fix_beta.patch        # [ppc64le]
+      - fix_libraw_0_20.patch
   # The below files are taken (and adapted) from VCPKG: https://github.com/microsoft/vcpkg/tree/master/ports/freeimage
   # The patches have been taken (and modified) from Debian / Fedora / VCPKG
   - path: CMakeLists.txt
@@ -18,8 +19,7 @@ source:
   - path: FreeImageConfig-static.h
 
 build:
-  number: 3
-  skip: true  # [win]
+  number: 4
   run_exports:
     - {{ pin_subpackage(name, max_pin='x.x') }}
 
@@ -29,7 +29,9 @@ requirements:
     - {{ compiler('cxx') }}
     - cmake
     - pkg-config
-    - make  # [unix]
+    - m2-patch  # [win]
+    - ninja     # [win]
+    - make      # [unix]
     # need to convert line endings for the patches to work
     - dos2unix  # [unix]
   host:
