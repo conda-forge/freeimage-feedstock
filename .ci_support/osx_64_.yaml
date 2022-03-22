@@ -3,15 +3,15 @@ MACOSX_DEPLOYMENT_TARGET:
 c_compiler:
 - clang
 c_compiler_version:
-- '11'
+- '12'
 channel_sources:
-- conda-forge,defaults
+- conda-forge
 channel_targets:
 - conda-forge main
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
-- '11'
+- '12'
 jpeg:
 - '9'
 libpng:
@@ -23,7 +23,7 @@ libwebp_base:
 macos_machine:
 - x86_64-apple-darwin13.4.0
 openexr:
-- '2.5'
+- '3.1'
 openjpeg:
 - '2.4'
 pin_run_as_build:
