@@ -6,6 +6,8 @@ channel_targets:
 - conda-forge main
 cxx_compiler:
 - vs2017
+imath:
+- '3.1'
 jpeg:
 - '9'
 libpng:

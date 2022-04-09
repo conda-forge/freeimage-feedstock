@@ -12,6 +12,8 @@ cxx_compiler:
 - clangxx
 cxx_compiler_version:
 - '12'
+imath:
+- '3.1'
 jpeg:
 - '9'
 libpng:
