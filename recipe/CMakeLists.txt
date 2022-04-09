@@ -34,15 +34,15 @@ find_package(LibRaw   REQUIRED)
 
 FIND_PACKAGE(Imath CONFIG REQUIRED)
 FIND_PACKAGE(OpenEXR CONFIG REQUIRED)
-SET(OPENEXR_LIBRARIES
+SET(OpenEXR_LIBRARIES
     OpenEXR::OpenEXR
     OpenEXR::Iex
     OpenEXR::IlmThread
     Imath::Imath
 )
-get_target_property(OPENEXR_INCLUDE_DIR OpenEXR::OpenEXRConfig INTERFACE_INCLUDE_DIRECTORIES)
+get_target_property(OpenEXR_INCLUDE_DIR OpenEXR::OpenEXRConfig INTERFACE_INCLUDE_DIRECTORIES)
 get_target_property(IMATH_INCLUDE_DIR Imath::ImathConfig INTERFACE_INCLUDE_DIRECTORIES)
-include_directories(${OPENEXR_INCLUDE_DIR} ${IMATH_INCLUDE_DIR})
+include_directories(${OpenEXR_INCLUDE_DIR} ${IMATH_INCLUDE_DIR})
 
 option(BUILD_SHARED_LIBS "Build shared libraries" ON)
 option(INSTALL_HEADERS "Install the development headers" ON)
