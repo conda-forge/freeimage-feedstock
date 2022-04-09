@@ -31,9 +31,18 @@ find_package(OpenJPEG REQUIRED)
 find_package(WebP     REQUIRED)
 find_package(JXR      REQUIRED)
 find_package(LibRaw   REQUIRED)
-find_package(OpenEXR  REQUIRED)
 
-set(OpenEXR_LIBRARIES IlmImf Iex Half)
+FIND_PACKAGE(Imath CONFIG REQUIRED)
+FIND_PACKAGE(OpenEXR CONFIG REQUIRED)
+SET(OpenEXR_LIBRARIES
+    OpenEXR::OpenEXR
+    OpenEXR::Iex
+    OpenEXR::IlmThread
+    Imath::Imath
+)
+get_target_property(OpenEXR_INCLUDE_DIR OpenEXR::OpenEXRConfig INTERFACE_INCLUDE_DIRECTORIES)
+get_target_property(IMATH_INCLUDE_DIR Imath::ImathConfig INTERFACE_INCLUDE_DIRECTORIES)
+include_directories(${OpenEXR_INCLUDE_DIR} ${IMATH_INCLUDE_DIR})
 
 option(BUILD_SHARED_LIBS "Build shared libraries" ON)
 option(INSTALL_HEADERS "Install the development headers" ON)
