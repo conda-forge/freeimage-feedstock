@@ -12,6 +12,7 @@ source:
     patches:
       - fix_beta.patch        # [ppc64le]
       - fix_libraw_0_20.patch
+      # https://gitlab.com/libtiff/libtiff/-/commit/11f3f279608ae9e68f014717393197f430f9be58
       - libtiff44.patch
       # https://src.fedoraproject.org/rpms/freeimage/blob/rawhide/f/freeimage-openexr3.patch
       # Applied in build script
