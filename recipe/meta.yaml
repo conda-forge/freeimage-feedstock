@@ -12,6 +12,7 @@ source:
     patches:
       - fix_beta.patch        # [ppc64le]
       - fix_libraw_0_20.patch
+      - libtiff44.patch
       # https://src.fedoraproject.org/rpms/freeimage/blob/rawhide/f/freeimage-openexr3.patch
       # Applied in build script
       # - freeimage-openexr3.patch
@@ -22,7 +23,7 @@ source:
   - path: FreeImageConfig-static.h
 
 build:
-  number: 8
+  number: 9
   run_exports:
     - {{ pin_subpackage(name, max_pin='x.x') }}
 
