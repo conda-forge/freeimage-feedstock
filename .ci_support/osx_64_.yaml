@@ -3,7 +3,7 @@ MACOSX_DEPLOYMENT_TARGET:
 c_compiler:
 - clang
 c_compiler_version:
-- '13'
+- '14'
 channel_sources:
 - conda-forge
 channel_targets:
@@ -11,7 +11,7 @@ channel_targets:
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
-- '13'
+- '14'
 imath:
 - '3.1'
 jpeg:
@@ -19,7 +19,7 @@ jpeg:
 libpng:
 - '1.6'
 libtiff:
-- '4'
+- '4.5'
 libwebp_base:
 - '1'
 macos_machine:
@@ -27,18 +27,7 @@ macos_machine:
 openexr:
 - '3.1'
 openjpeg:
-- '2.5'
-pin_run_as_build:
-  jpeg:
-    max_pin: x
-  libpng:
-    max_pin: x.x
-  libtiff:
-    max_pin: x
-  openjpeg:
-    max_pin: x.x
-  zlib:
-    max_pin: x.x
+- '2'
 target_platform:
 - osx-64
 zip_keys:
