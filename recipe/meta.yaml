@@ -26,7 +26,7 @@ source:
   - path: FreeImageConfig-static.h
 
 build:
-  number: 12
+  number: 13
   run_exports:
     - {{ pin_subpackage(name, max_pin='x.x') }}
 
@@ -42,8 +42,8 @@ requirements:
     # need to convert line endings for the patches to work
     - dos2unix  # [unix]
   host:
-    # or use jpeg-turbo?
-    - jpeg
+    # or use libjpeg-turbo -turbo?
+    - libjpeg-turbo
     - openjpeg
     - jxrlib
     - libtiff
