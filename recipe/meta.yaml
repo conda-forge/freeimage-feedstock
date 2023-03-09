@@ -67,7 +67,7 @@ test:
     - if not exist %PREFIX%\\Library\\bin\\FreeImage.dll (exit 1)  # [win]
 about:
   home: http://freeimage.sourceforge.net/
-  license: GPLv2 OR GPLv3 OR FreeImage
+  license: GPL-2.0-or-later OR GPL-3.0-or-later OR FreeImage
   license_file:
       - license-fi.txt
       - license-gplv2.txt
