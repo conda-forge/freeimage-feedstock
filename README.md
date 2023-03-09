@@ -1,11 +1,11 @@
-About freeimage
-===============
+About freeimage-feedstock
+=========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/freeimage-feedstock/blob/main/LICENSE.txt)
 
 Home: http://freeimage.sourceforge.net/
 
-Package license: GPLv2 OR GPLv3 OR FreeImage
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/freeimage-feedstock/blob/main/LICENSE.txt)
+Package license: GPL-2.0-or-later OR GPL-3.0-or-later OR FreeImage
 
 Summary: Helps provide support for many common image formats (PNG, JPEG, TIFF, BMP and others).
 
