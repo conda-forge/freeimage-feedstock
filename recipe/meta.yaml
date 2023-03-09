@@ -42,7 +42,6 @@ requirements:
     # need to convert line endings for the patches to work
     - dos2unix  # [unix]
   host:
-    # or use libjpeg-turbo -turbo?
     - libjpeg-turbo
     - openjpeg
     - jxrlib
