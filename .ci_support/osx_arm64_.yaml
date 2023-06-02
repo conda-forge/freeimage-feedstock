@@ -13,7 +13,7 @@ cxx_compiler:
 cxx_compiler_version:
 - '15'
 imath:
-- 3.1.8
+- 3.1.9
 libjpeg_turbo:
 - 2.1.5
 libpng:
