@@ -21,7 +21,7 @@ docker_image:
 imath:
 - 3.1.9
 libjpeg_turbo:
-- 2.1.5
+- '3'
 libpng:
 - '1.6'
 libraw:
