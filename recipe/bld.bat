@@ -1,4 +1,5 @@
 dos2unix Source/**/*.cpp
+if errorlevel 1 exit 1
 
 patch -p1 < %RECIPE_DIR%/patches/Use-system-libs.patch
 if errorlevel 1 exit 1
