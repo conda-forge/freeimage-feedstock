@@ -42,6 +42,7 @@ requirements:
     - {{ compiler('cxx') }}
     - cmake
     - pkg-config
+    - m2-dos2unix  # [win]
     - m2-patch  # [win]
     - ninja     # [win]
     - make      # [unix]
