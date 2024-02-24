@@ -8,6 +8,8 @@ patch -p1 < %RECIPE_DIR%/patches/CVE-2019-12211-13.patch
 if errorlevel 1 exit 1
 patch -p1 < %RECIPE_DIR%/patches/freeimage-openexr3.patch
 if errorlevel 1 exit 1
+patch -p1 < %RECIPE_DIR%/patches/remove_auto_ptr.patch
+if errorlevel 1 exit 1
 
 rem remove all included libs to make sure these don't get used during compile
 del /Q /S Source\Lib* Source\ZLib Source\OpenEXR
