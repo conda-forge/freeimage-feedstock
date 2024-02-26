@@ -19,7 +19,7 @@ cxx_compiler_version:
 docker_image:
 - quay.io/condaforge/linux-anvil-cos7-x86_64
 imath:
-- 3.1.9
+- 3.1.10
 libjpeg_turbo:
 - '3'
 libpng:

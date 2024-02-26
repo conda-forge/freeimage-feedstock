@@ -16,9 +16,15 @@ source:
       - fix_libraw_0_21.patch
       # https://gitlab.com/libtiff/libtiff/-/commit/11f3f279608ae9e68f014717393197f430f9be58
       - libtiff44.patch
-      # https://src.fedoraproject.org/rpms/freeimage/blob/rawhide/f/freeimage-openexr3.patch
       # Applied in build script
-      # - freeimage-openexr3.patch
+      # - patches/Use-system-libs.patch
+      # - patches/Fix-compatibility-with-system-libpng.patch
+      # - patches/CVE-2019-12211-13.patch
+      # https://src.fedoraproject.org/rpms/freeimage/blob/rawhide/f/freeimage-openexr3.patch
+      # - patches/freeimage-openexr3.patch
+      # https://github.com/microsoft/vcpkg/pull/26007
+      # - patches/remove_auto_ptr.patch
+
   # The below files are taken (and adapted) from VCPKG: https://github.com/microsoft/vcpkg/tree/master/ports/freeimage
   # The patches have been taken (and modified) from Debian / Fedora / VCPKG
   - path: CMakeLists.txt
@@ -26,7 +32,7 @@ source:
   - path: FreeImageConfig-static.h
 
 build:
-  number: 18
+  number: 19
   run_exports:
     - {{ pin_subpackage(name, max_pin='x.x') }}
 
@@ -36,6 +42,7 @@ requirements:
     - {{ compiler('cxx') }}
     - cmake
     - pkg-config
+    - m2-dos2unix  # [win]
     - m2-patch  # [win]
     - ninja     # [win]
     - make      # [unix]

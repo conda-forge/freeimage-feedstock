@@ -6,6 +6,7 @@ patch -p1 < $RECIPE_DIR/patches/Use-system-libs.patch
 patch -p1 < $RECIPE_DIR/patches/Fix-compatibility-with-system-libpng.patch
 patch -p1 < $RECIPE_DIR/patches/CVE-2019-12211-13.patch
 patch -p1 < $RECIPE_DIR/patches/freeimage-openexr3.patch
+patch -p1 < $RECIPE_DIR/patches/remove_auto_ptr.patch
 
 # remove all included libs to make sure these don't get used during compile
 rm -r Source/Lib* Source/ZLib Source/OpenEXR
