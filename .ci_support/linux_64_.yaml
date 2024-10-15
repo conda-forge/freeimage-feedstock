@@ -27,11 +27,11 @@ libpng:
 libraw:
 - '0.21'
 libtiff:
-- '4.6'
+- '4.7'
 libwebp_base:
 - '1'
 openexr:
-- '3.2'
+- '3.3'
 openjpeg:
 - '2'
 target_platform:
