@@ -1,5 +1,5 @@
 c_compiler:
-- vs2019
+- vs2022
 c_stdlib:
 - vs
 channel_sources:
@@ -7,9 +7,9 @@ channel_sources:
 channel_targets:
 - conda-forge main
 cxx_compiler:
-- vs2019
+- vs2022
 imath:
-- 3.1.12
+- 3.2.1
 libjpeg_turbo:
 - '3'
 libpng:
@@ -21,7 +21,7 @@ libtiff:
 libwebp_base:
 - '1'
 openexr:
-- '3.3'
+- '3.4'
 openjpeg:
 - '2'
 target_platform:
