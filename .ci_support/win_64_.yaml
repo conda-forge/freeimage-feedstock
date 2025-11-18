@@ -21,7 +21,7 @@ libtiff:
 libwebp_base:
 - '1'
 openexr:
-- '3.3'
+- '3.4'
 openjpeg:
 - '2'
 target_platform:
