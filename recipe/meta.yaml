@@ -32,7 +32,7 @@ source:
   - path: FreeImageConfig-static.h
 
 build:
-  number: 23
+  number: 24
   run_exports:
     - {{ pin_subpackage(name, max_pin='x.x') }}
 
