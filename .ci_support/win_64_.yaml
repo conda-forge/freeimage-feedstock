@@ -9,7 +9,7 @@ channel_targets:
 cxx_compiler:
 - vs2022
 imath:
-- 3.2.2
+- 3.2.3
 libjpeg_turbo:
 - '3'
 libpng:
